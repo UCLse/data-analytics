@@ -1,0 +1,70 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Sayara Beg"><meta name="description" content="A UCL Python data analytics teaching activity for the Centre for Systems Engineering, Department of Space and Climate Physics."><meta name="theme-color" content="#361a54"><title>Instructor guide | UCL Heat Cascade</title><link rel="stylesheet" href="/data-analytics/styles.css"><script src="/data-analytics/app.js" defer></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="ucl-masthead" aria-label="UCL and department identity"><a class="ucl-logo-link" href="https://www.ucl.ac.uk/" aria-label="University College London"><img class="ucl-logo" src="/data-analytics/ucl-logo.svg" alt="UCL (University College London)" width="1394" height="391"></a><div class="ucl-department"><p class="ucl-university">University College London</p><a class="ucl-department-title" href="https://www.ucl.ac.uk/mathematical-physical-sciences/mssl">Department of Space and Climate Physics</a><p class="ucl-centre">UCL Centre for Systems Engineering</p><p class="ucl-faculty">Faculty of Mathematical and Physical Sciences</p></div></header><aside class="sidebar" id="sidebar"><a class="brand" href="/data-analytics/" aria-label="Heat Cascade course home"><span class="brand-mark" aria-hidden="true">HC</span><span>HEAT CASCADE<small>Python data analytics</small></span></a><div class="sidebar-intro">A guided route from your first line of Python to an evidence-led decision.</div><nav aria-label="Workshop route"><div class="nav-group"><p>01 / FOUNDATIONS</p><a href="/data-analytics/course/lessons/00-setup.html" ><span class="nav-number">00</span><span>Setup your workspace</span><span class="completion-dot" data-completed="00-setup" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/01-python-fundamentals.html" ><span class="nav-number">01</span><span>Python fundamentals</span><span class="completion-dot" data-completed="01-python-fundamentals" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/02-reading-data.html" ><span class="nav-number">02</span><span>Read and explore data</span><span class="completion-dot" data-completed="02-reading-data" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/03-data-quality.html" ><span class="nav-number">03</span><span>Clean and audit data</span><span class="completion-dot" data-completed="03-data-quality" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/04-joining-systems.html" ><span class="nav-number">04</span><span>Join the system layers</span><span class="completion-dot" data-completed="04-joining-systems" aria-hidden="true"></span></a></div><div class="nav-group"><p>02 / ANALYTICAL METHODS</p><a href="/data-analytics/course/lessons/05-exploration-visualisation.html" ><span class="nav-number">05</span><span>Explore and visualise</span><span class="completion-dot" data-completed="05-exploration-visualisation" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/06-transparent-index.html" ><span class="nav-number">06</span><span>Build a transparent index</span><span class="completion-dot" data-completed="06-transparent-index" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/07-linear-regression.html" ><span class="nav-number">07</span><span>Linear regression</span><span class="completion-dot" data-completed="07-linear-regression" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/08-classification.html" ><span class="nav-number">08</span><span>Trees and logistic regression</span><span class="completion-dot" data-completed="08-classification" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/09-clustering.html" ><span class="nav-number">09</span><span>Neighbourhood clustering</span><span class="completion-dot" data-completed="09-clustering" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/10-time-series.html" ><span class="nav-number">10</span><span>Time-series evaluation</span><span class="completion-dot" data-completed="10-time-series" aria-hidden="true"></span></a></div><div class="nav-group"><p>03 / DECISIONS & EVIDENCE</p><a href="/data-analytics/course/lessons/11-deep-uncertainty.html" ><span class="nav-number">11</span><span>Decisions under uncertainty</span><span class="completion-dot" data-completed="11-deep-uncertainty" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/12-game-and-text.html" ><span class="nav-number">12</span><span>Game and text analysis</span><span class="completion-dot" data-completed="12-game-and-text" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/13-capstone.html" ><span class="nav-number">13</span><span>Final analytical brief</span><span class="completion-dot" data-completed="13-capstone" aria-hidden="true"></span></a></div></nav><div class="side-bottom"><a href="/data-analytics/course/docs/data-dictionary.html">Data dictionary ↗</a><a href="/data-analytics/course/instructor/teaching-guide.html">Instructor guide ↗</a><p>Fictional city. Real analytical practice.<br>Every supplied record is synthetic.</p></div></aside><div class="workspace"><header class="topbar"><button class="menu-button" type="button" aria-controls="sidebar" aria-expanded="false">☰ <span>Workshops</span></button><div class="top-links"><a href="/data-analytics/" >Course</a><a href="/data-analytics/course/docs/data-dictionary.html">Data</a><a href="/data-analytics/resources.html" >Resources</a></div><a class="setup-link" href="/data-analytics/course/lessons/00-setup.html">Student setup <span aria-hidden="true">→</span></a></header><main id="main-content"><div class="document-top"><a href="/data-analytics/">Course home</a><span>/</span><span>Resource</span></div><div class="document-actions"></div><article class="prose"><h1 id="instructor-guide">Instructor guide</h1>
+<h2 id="1-delivery-boundary">1. Delivery boundary</h2>
+<p>The course introduces Python through a single synthetic socio-technical system. Its 14 workshops develop data stewardship before modelling and interpretation before recommendations. The suggested workload is 28 hours; additional beginner practice may be needed.</p>
+<p>The workload and assessment guidance are teaching suggestions. <a href="/data-analytics/course/docs/research-alignment.html">Research context</a> identifies Sayara Beg&#39;s authorship and the public-release boundary.</p>
+<h2 id="2-recommended-delivery-pattern">2. Recommended delivery pattern</h2>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Teaching block</th>
+<th>Workshops</th>
+<th>Classroom emphasis</th>
+<th>Checkpoint evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Environment and foundations</td>
+<td>00 to 02</td>
+<td>Distinguish storage from execution; explain each line before running it</td>
+<td>Working notebook, types and filtered extract</td>
+</tr>
+<tr>
+<td>Preparation and integration</td>
+<td>03 to 04</td>
+<td>Inspect defects before fixing them; check the unit and join cardinality</td>
+<td>Cleaning audit and checked integrated table</td>
+</tr>
+<tr>
+<td>Exploration and indicator design</td>
+<td>05 to 06</td>
+<td>Label plots; distinguish percentages from percentage points; disclose weights</td>
+<td>Exploratory figures and sensitivity comparison</td>
+</tr>
+<tr>
+<td>Predictive and descriptive models</td>
+<td>07 to 10</td>
+<td>Declare predictor availability; retain baselines; recognise spatial and temporal dependence</td>
+<td>Errors, confusion matrix, profile interpretation and forecast comparison</td>
+</tr>
+<tr>
+<td>Assumptions and behaviour</td>
+<td>11 to 12</td>
+<td>Explain conditional futures and nested observations</td>
+<td>Regret table and session-level paired analysis</td>
+</tr>
+<tr>
+<td>Analytical communication</td>
+<td>13</td>
+<td>Link evidence to a conditional decision</td>
+<td>Reproducible brief and independent extension</td>
+</tr>
+</tbody></table></div>
+<p>Begin each practical with a short demonstration, then allow students to run one cell and explain its output to a partner. Pause when students encounter an error; the final line of the traceback often identifies the immediate problem.</p>
+<p>The <a href="/data-analytics/course/docs/code-reading-guide.html">code-reading guide</a> supports novices. The generated notebooks contain the same guided code as the Markdown lessons. Independent tasks should be attempted before opening <a href="/data-analytics/course/instructor/practice-answers.html">practice answers</a>.</p>
+<h2 id="3-differentiation-and-misconceptions">3. Differentiation and misconceptions</h2>
+<p>Students needing more support can explain a working cell before changing one value. More experienced students can investigate a second observation boundary or validation design. Extensions should strengthen interpretation rather than reward additional model complexity.</p>
+<p>The major misconceptions concern treating surface temperature as personal exposure, daily rows as independent neighbourhoods, fitted coefficients as causal effects and scenario rankings as unconditional policies. Workshop 12 also distinguishes a score change from evidence that a game caused learning.</p>
+<p>The text exercise deliberately shows that a small word list can misread negation. It should not be presented as a validated sentiment instrument. The questionnaire score and confidence measure cannot support psychometric or item-level calibration claims.</p>
+<h2 id="4-preparation-and-reference-checks">4. Preparation and reference checks</h2>
+<p>Complete Workshop 00 in the teaching environment before class. Use local VS Code or GitHub Codespaces and confirm that the notebook kernel uses the declared packages. Provide the approved teaching repository link directly to students. Confirm that students fork that repository and push completed notebooks to their own forks. Read <a href="/data-analytics/course/docs/verification.html">verification</a> for reference outputs and verification limits.</p>
+<p>From the <code>heat-cascade</code> folder, a local interpreter can run a worked script, for example <code>python solutions/03-data-quality.py</code>. On Windows, use <code>.venv\Scripts\python.exe</code>; on macOS or Linux, use <code>.venv/bin/python</code>. Generated CSVs and figures appear in <code>outputs</code>.</p>
+<p>A fresh Codespaces container and the VS Code notebook interface were not exercised end to end. Institutions should complete Workshop 00 in their chosen delivery environment. The small synthetic analytical examples run without external data services after setup.</p>
+<h2 id="5-assessment-stewardship">5. Assessment stewardship</h2>
+<p>The <a href="/data-analytics/course/docs/assessment.html">assessment brief</a> proposes a rubric. The institution must approve its final weighting and requirements before formal use. Students should explain the method and decision boundary even when the code produces the expected numerical answer.</p>
+<p>Course release decisions should preserve the source boundary. Private research plans and original historical datasets are withheld from this public teaching release.</p>
+<hr>
+<p>Course author and research lead: <strong>Sayara Beg</strong>, Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics, Faculty of Mathematical and Physical Sciences. <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">UCL profile</a>. Reused or adapted material must preserve this author credit.</p>
+<h2 id="6-student-repository-workflow">6. Student repository workflow</h2>
+<p>Workshop 00 requires a personal GitHub account and fork before either environment is opened. Student notebooks in <code>student_work</code> are tracked by Git. Generated outputs remain ignored until selected evidence is copied into <code>student_work/results</code>. Students should submit the fork URL and an assessed commit identifier through the approved submission channel.</p>
+<p>Public forks retain repository history. Complete the planned public-release history review before inviting students to fork. Confidential feedback and personal assessment identifiers should be handled through the institutional submission system.</p>
+</article></main><footer class="footer"><div><strong>Course author and research lead: <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">Sayara Beg</a></strong><br>Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics,<br>Faculty of Mathematical and Physical Sciences.<br>Credit Sayara Beg when reusing or adapting these materials.</div><div><a href="/data-analytics/attribution.html">Attribution & public-release boundary</a><br><a href="/data-analytics/course/docs/verification.html">Verification & limitations</a></div></footer></div></body></html>

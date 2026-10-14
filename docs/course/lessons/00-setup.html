@@ -1,0 +1,134 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Sayara Beg"><meta name="description" content="A UCL Python data analytics teaching activity for the Centre for Systems Engineering, Department of Space and Climate Physics."><meta name="theme-color" content="#361a54"><title>00. Setup with VS Code or GitHub Codespaces | UCL Heat Cascade</title><link rel="stylesheet" href="/data-analytics/styles.css"><script src="/data-analytics/app.js" defer></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="ucl-masthead" aria-label="UCL and department identity"><a class="ucl-logo-link" href="https://www.ucl.ac.uk/" aria-label="University College London"><img class="ucl-logo" src="/data-analytics/ucl-logo.svg" alt="UCL (University College London)" width="1394" height="391"></a><div class="ucl-department"><p class="ucl-university">University College London</p><a class="ucl-department-title" href="https://www.ucl.ac.uk/mathematical-physical-sciences/mssl">Department of Space and Climate Physics</a><p class="ucl-centre">UCL Centre for Systems Engineering</p><p class="ucl-faculty">Faculty of Mathematical and Physical Sciences</p></div></header><aside class="sidebar" id="sidebar"><a class="brand" href="/data-analytics/" aria-label="Heat Cascade course home"><span class="brand-mark" aria-hidden="true">HC</span><span>HEAT CASCADE<small>Python data analytics</small></span></a><div class="sidebar-intro">A guided route from your first line of Python to an evidence-led decision.</div><nav aria-label="Workshop route"><div class="nav-group"><p>01 / FOUNDATIONS</p><a href="/data-analytics/course/lessons/00-setup.html" aria-current="page"><span class="nav-number">00</span><span>Setup your workspace</span><span class="completion-dot" data-completed="00-setup" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/01-python-fundamentals.html" ><span class="nav-number">01</span><span>Python fundamentals</span><span class="completion-dot" data-completed="01-python-fundamentals" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/02-reading-data.html" ><span class="nav-number">02</span><span>Read and explore data</span><span class="completion-dot" data-completed="02-reading-data" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/03-data-quality.html" ><span class="nav-number">03</span><span>Clean and audit data</span><span class="completion-dot" data-completed="03-data-quality" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/04-joining-systems.html" ><span class="nav-number">04</span><span>Join the system layers</span><span class="completion-dot" data-completed="04-joining-systems" aria-hidden="true"></span></a></div><div class="nav-group"><p>02 / ANALYTICAL METHODS</p><a href="/data-analytics/course/lessons/05-exploration-visualisation.html" ><span class="nav-number">05</span><span>Explore and visualise</span><span class="completion-dot" data-completed="05-exploration-visualisation" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/06-transparent-index.html" ><span class="nav-number">06</span><span>Build a transparent index</span><span class="completion-dot" data-completed="06-transparent-index" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/07-linear-regression.html" ><span class="nav-number">07</span><span>Linear regression</span><span class="completion-dot" data-completed="07-linear-regression" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/08-classification.html" ><span class="nav-number">08</span><span>Trees and logistic regression</span><span class="completion-dot" data-completed="08-classification" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/09-clustering.html" ><span class="nav-number">09</span><span>Neighbourhood clustering</span><span class="completion-dot" data-completed="09-clustering" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/10-time-series.html" ><span class="nav-number">10</span><span>Time-series evaluation</span><span class="completion-dot" data-completed="10-time-series" aria-hidden="true"></span></a></div><div class="nav-group"><p>03 / DECISIONS & EVIDENCE</p><a href="/data-analytics/course/lessons/11-deep-uncertainty.html" ><span class="nav-number">11</span><span>Decisions under uncertainty</span><span class="completion-dot" data-completed="11-deep-uncertainty" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/12-game-and-text.html" ><span class="nav-number">12</span><span>Game and text analysis</span><span class="completion-dot" data-completed="12-game-and-text" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/13-capstone.html" ><span class="nav-number">13</span><span>Final analytical brief</span><span class="completion-dot" data-completed="13-capstone" aria-hidden="true"></span></a></div></nav><div class="side-bottom"><a href="/data-analytics/course/docs/data-dictionary.html">Data dictionary ↗</a><a href="/data-analytics/course/instructor/teaching-guide.html">Instructor guide ↗</a><p>Fictional city. Real analytical practice.<br>Every supplied record is synthetic.</p></div></aside><div class="workspace"><header class="topbar"><button class="menu-button" type="button" aria-controls="sidebar" aria-expanded="false">☰ <span>Workshops</span></button><div class="top-links"><a href="/data-analytics/" >Course</a><a href="/data-analytics/course/docs/data-dictionary.html">Data</a><a href="/data-analytics/resources.html" >Resources</a></div><a class="setup-link" href="/data-analytics/course/lessons/00-setup.html">Student setup <span aria-hidden="true">→</span></a></header><main id="main-content"><div class="document-top"><a href="/data-analytics/">Course home</a><span>/</span><span>Workshop 00</span></div><div class="document-actions"><button type="button" class="completion-button" data-mark="00-setup" aria-pressed="false">Mark complete</button></div><article class="prose"><h1 id="00-setup-with-vs-code-or-github-codespaces">00. Setup with VS Code or GitHub Codespaces</h1>
+<p><a href="/data-analytics/course/README.html">Course home</a> | <strong>Indicative time:</strong> 1 hour</p>
+<p>Create a GitHub account and fork the course first. Then choose local VS Code or GitHub Codespaces. Both routes use the same Python exercises and save work to the student&#39;s own fork.</p>
+<h2 id="1-understand-the-working-boundary">1. Understand the working boundary</h2>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Route</th>
+<th>What is needed</th>
+<th>Where Python runs</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Local VS Code</td>
+<td>A GitHub fork, Git, VS Code and Python 3.12</td>
+<td>On the student&#39;s computer, using a clone of the fork</td>
+</tr>
+<tr>
+<td>GitHub Codespaces</td>
+<td>A GitHub fork, internet access and available Codespaces usage</td>
+<td>In a remote environment created from the student&#39;s fork</td>
+</tr>
+</tbody></table></div>
+<p>The repository and course website display instructions. VS Code edits files. A notebook kernel executes Python and stores variables. VS Code needs a separate Python environment to execute the code.</p>
+<p>The <code>heat-cascade</code> folder contains <code>data/raw</code>, <code>notebooks</code>, <code>student_work</code> and <code>outputs</code>. Keep this structure intact. Personal notebook copies belong in <code>student_work</code>; generated figures and CSVs belong in <code>outputs</code>.</p>
+<h2 id="2-create-an-account-and-fork-the-course">2. Create an account and fork the course</h2>
+<h3 id="21-create-or-sign-in-to-a-github-account">2.1. Create or sign in to a GitHub account</h3>
+<p>Create a personal account at <a href="https://github.com/signup">github.com/signup</a>, complete email verification and sign in. An existing personal account can be used.</p>
+<p><strong>Why:</strong> The account owns the student&#39;s fork and provides a place to retain completed work between sessions.</p>
+<h3 id="22-fork-the-teaching-repository">2.2. Fork the teaching repository</h3>
+<p>Obtain the course repository link from the lecturer through the approved teaching channel. Open that repository and select <strong>Fork</strong> near the top right. Choose the student&#39;s own account as the owner, keep the repository name <code>data-analytics</code>, retain <strong>Copy the main branch only</strong> for this course, then choose <strong>Create fork</strong>.</p>
+<p><strong>Expected:</strong> GitHub opens a repository at <code>https://github.com/YOUR-USERNAME/data-analytics</code>, with a notice that it was forked from the lecturer&#39;s teaching repository. <code>YOUR-USERNAME</code> means the student&#39;s actual GitHub username.</p>
+<p><strong>Why:</strong> A fork gives the student a repository under their own account. Commits and pushes to that fork retain the student&#39;s work while the lecturer&#39;s teaching copy remains the reference.</p>
+<p>Use the student&#39;s fork for all remaining setup steps. Preserve Sayara Beg&#39;s author notices and citation files when adapting the materials. Public forks are visible to others, so keep personal identifiers, credentials and confidential feedback out of committed work.</p>
+<h2 id="3-route-a-local-vs-code">3. Route A: local VS Code</h2>
+<h3 id="31-install-the-tools-and-clone-the-fork">3.1. Install the tools and clone the fork</h3>
+<p>Install <a href="https://git-scm.com/downloads">Git</a>, <a href="https://code.visualstudio.com/">VS Code</a> and <a href="https://www.python.org/downloads/">Python 3.12</a>, using institutional support if required. In VS Code&#39;s Extensions panel, install the <strong>Python</strong> and <strong>Jupyter</strong> extensions published by Microsoft.</p>
+<p>In the student&#39;s fork on GitHub, select <strong>Code &gt; Local &gt; HTTPS</strong> and copy its clone URL. The URL must contain the student&#39;s username. In VS Code, open the Command Palette, choose <strong>Git: Clone</strong>, paste that URL, select a local folder and open the cloned repository.</p>
+<p>The Explorer should show <code>heat-cascade</code> inside the repository root. This is a Git-connected local copy of the student&#39;s fork. Sign in to GitHub when VS Code requests authentication for pushing work.</p>
+<p>Open <strong>Terminal &gt; New Terminal</strong> at the repository root and run:</p>
+<pre><code class="language-bash">cd heat-cascade
+</code></pre>
+<p><strong>Expected:</strong> The terminal is now inside the course folder, which contains <code>data</code>, <code>lessons</code> and <code>notebooks</code>.</p>
+<p><strong>Why:</strong> Cloning retains the Git connection needed to push work back to the student&#39;s fork. Entering the course folder puts the package commands beside their requirements file.</p>
+<h3 id="32-create-a-dedicated-environment">3.2. Create a dedicated environment</h3>
+<p>Use the terminal already inside <code>heat-cascade</code> from Section 3.1. If a new terminal starts at the repository root, run <code>cd heat-cascade</code> first. Then run the commands for the operating system, one line at a time. These are terminal commands, not notebook cells.</p>
+<p><strong>Windows PowerShell:</strong></p>
+<pre><code class="language-powershell">py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-notebook.txt
+</code></pre>
+<p><strong>macOS or Linux:</strong></p>
+<pre><code class="language-bash">python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements-notebook.txt
+</code></pre>
+<p><strong>Why:</strong> The virtual environment keeps the course packages together. Using its interpreter directly installs packages into that environment without changing terminal activation settings.</p>
+<p><strong>Expected:</strong> Installation completes without an error. If <code>requirements-notebook.txt</code> is missing, check that the terminal is inside <code>heat-cascade</code>.</p>
+<h3 id="33-select-the-interpreter-and-notebook-kernel">3.3. Select the interpreter and notebook kernel</h3>
+<p>Open the Command Palette with <strong>Ctrl+Shift+P</strong>, or <strong>Command+Shift+P</strong> on macOS. Choose <strong>Python: Select Interpreter</strong> and select the course <code>.venv</code>. Use <strong>Enter interpreter path</strong> if it is not listed. The Windows path ends in <code>.venv\Scripts\python.exe</code>; the macOS or Linux path ends in <code>.venv/bin/python</code>.</p>
+<p>Open <code>notebooks/01-python-fundamentals.ipynb</code>. Choose <strong>Select Kernel</strong> at the top right, then <strong>Python Environments</strong>, and select that same <code>.venv</code>. An existing notebook can use a different kernel from the selected script interpreter.</p>
+<p>Save a personal copy in <code>heat-cascade/student_work</code> before editing. In a terminal already inside <code>heat-cascade</code>, that folder is simply <code>student_work</code>. Continue with Section 5.</p>
+<h2 id="4-route-b-github-codespaces-in-the-browser">4. Route B: GitHub Codespaces in the browser</h2>
+<h3 id="41-create-the-remote-environment">4.1. Create the remote environment</h3>
+<p>Open the student&#39;s own fork at <code>https://github.com/YOUR-USERNAME/data-analytics</code>. Select <strong>Code &gt; Codespaces</strong> and create a codespace on <code>main</code>. Advanced options allow a machine choice; the small course datasets can be used with a two-core machine.</p>
+<p>Check who pays and review the available usage first. Codespaces consumes compute and storage allowances. Stopping a codespace ends its active compute session, while stored files continue to occupy storage until the codespace is deleted.</p>
+<p><strong>Why:</strong> Codespaces supplies Python and a browser-based VS Code editor. No local Python installation is needed. Opening <code>github.dev</code> alone does not supply this course runtime.</p>
+<h3 id="42-wait-for-automatic-setup">4.2. Wait for automatic setup</h3>
+<p>The repository configuration installs the Python and Jupyter extensions, creates <code>heat-cascade/.venv</code>, installs the course packages and registers <strong>Heat Cascade (Python 3.12)</strong> as a notebook kernel.</p>
+<p>Wait until the setup log reports <strong>Heat Cascade environment ready</strong>. The editor may open before installation finishes. A setup error means the environment is not ready.</p>
+<p>To rerun setup, open a terminal in the repository root and run:</p>
+<pre><code class="language-bash">python scripts/setup-codespaces.py
+</code></pre>
+<p><strong>Expected:</strong> The readiness message and installed package versions appear. Expand <code>heat-cascade</code> in the Explorer to find the materials.</p>
+<h3 id="43-open-and-save-the-notebook">4.3. Open and save the notebook</h3>
+<p>Open <code>heat-cascade/notebooks/01-python-fundamentals.ipynb</code>. Choose <strong>Select Kernel</strong> and select <strong>Heat Cascade (Python 3.12)</strong>, possibly under <strong>Jupyter Kernel</strong>. The same environment can be chosen under <strong>Python Environments</strong> using <code>heat-cascade/.venv/bin/python</code>.</p>
+<p>Save a personal copy in <code>heat-cascade/student_work</code>. If the registered kernel is missing, run <strong>Developer: Reload Window</strong> from the Command Palette, then select the kernel again.</p>
+<h3 id="44-retain-work-in-the-fork-and-stop-the-codespace">4.4. Retain work in the fork and stop the codespace</h3>
+<p>Save with <strong>Ctrl+S</strong>, or <strong>Command+S</strong> on macOS. Saving writes the file inside the codespace. Section 6 explains how to commit and push that file to the student&#39;s fork on GitHub.</p>
+<p>Complete that commit-and-push check before stopping or deleting the codespace. Work visible in the student&#39;s GitHub fork can be recovered in a new codespace; uncommitted files can be lost when the old codespace is deleted.</p>
+<p>After pushing, use <strong>Codespaces: Stop Current Codespace</strong>, or stop the environment from <a href="https://github.com/codespaces">the Codespaces page</a>.</p>
+<h2 id="5-common-checks-for-both-routes">5. Common checks for both routes</h2>
+<p>Run this block in a notebook code cell:</p>
+<pre><code class="language-python">from pathlib import Path
+import sys
+from importlib.metadata import version
+import numpy
+import pandas
+import matplotlib
+import sklearn
+
+candidates = [Path.cwd(), Path.cwd() / &quot;heat-cascade&quot;, Path.cwd().parent]
+ROOT = next((p for p in candidates if (p / &quot;data/raw/neighbourhoods.csv&quot;).is_file()), None)
+if ROOT is None:
+    raise FileNotFoundError(&quot;Open the notebook inside heat-cascade/notebooks or heat-cascade/student_work.&quot;)
+sys.path.insert(0, str(ROOT))
+print(&quot;Python:&quot;, sys.version.split()[0])
+print(&quot;Interpreter:&quot;, sys.executable)
+print(&quot;Course folder:&quot;, ROOT.name)
+for package in [&quot;numpy&quot;, &quot;pandas&quot;, &quot;matplotlib&quot;, &quot;scikit-learn&quot;]:
+    print(package, version(package))
+print(&quot;Area file exists:&quot;, (ROOT / &quot;data/raw/neighbourhoods.csv&quot;).is_file())
+</code></pre>
+<p><strong>Expected:</strong> Python 3.12; NumPy 2.3.5; pandas 2.2.3; Matplotlib 3.10.8; scikit-learn 1.8.0. The interpreter should point into the course <code>.venv</code>. The final line must be <code>Area file exists: True</code>.</p>
+<p>The reference analysis used Python 3.12.14. Another Python 3.12 patch version is normally suitable. Import errors or different packages require an environment check before analysis.</p>
+<h2 id="6-save-commit-and-push-work-to-the-student39s-fork">6. Save, commit and push work to the student&#39;s fork</h2>
+<p>A save writes a file in the working environment. A commit records a version in Git. A push sends that committed version to the student&#39;s fork on GitHub. All three steps are needed for a reliable session checkpoint.</p>
+<ol>
+<li>Save the personal notebook in <code>heat-cascade/student_work</code>.</li>
+<li>Open VS Code&#39;s <strong>Source Control</strong> panel. Review the changed files and stage the notebook using its <strong>+</strong> control.</li>
+<li>Enter a message such as <code>Complete Workshop 01</code>, then select <strong>Commit</strong>.</li>
+<li>Select <strong>Push</strong> from the Source Control menu, or use <strong>Sync Changes</strong>. Confirm that the target repository belongs to the student.</li>
+<li>Open the student&#39;s fork on GitHub and inspect <code>heat-cascade/student_work</code>. The updated notebook and commit message must be visible there.</li>
+</ol>
+<p><strong>Why:</strong> GitHub now retains the work independently of the local computer or the current codespace. Closing the editor after saving alone does not provide that remote checkpoint.</p>
+<p>Generated files in <code>outputs</code> remain ignored. Copy the small set of figures or CSVs needed as evidence into <code>student_work/results</code>, then stage, commit and push those selected files too. Retain the author credit in derivative figures and explanations.</p>
+<p>The terminal alternative, run from the repository root, is:</p>
+<pre><code class="language-bash">git status
+git add heat-cascade/student_work
+git commit -m &quot;Complete Workshop 01&quot;
+git push origin main
+</code></pre>
+<p>If Git reports <code>Author identity unknown</code>, configure this clone before committing:</p>
+<pre><code class="language-bash">git config --local user.name &quot;YOUR-USERNAME&quot;
+git config --local user.email &quot;YOUR-GITHUB-NOREPLY-EMAIL&quot;
+</code></pre>
+<p>Replace both placeholders. Copy the exact GitHub-provided no-reply address from <a href="https://github.com/settings/emails">GitHub email settings</a>; do not guess its format.</p>
+<p>Use the commit and push commands after configuring GitHub authentication in VS Code. <code>origin</code> should point to the student&#39;s fork; <code>git remote -v</code> displays the configured repository URL.</p>
+<h2 id="7-first-checkpoint">7. First checkpoint</h2>
+<p>Run <code>print(&quot;Heat Cascade setup complete&quot;)</code> in a code cell with <strong>Shift+Enter</strong>, or the cell&#39;s Run button. Add a Markdown cell explaining the chosen route, where Python runs and where the inputs live. Save, commit and push the notebook, then confirm it appears in the student&#39;s fork.</p>
+<p>Run each workshop from top to bottom. Restarting its kernel clears variables, so the folder cell must run again. The <a href="/data-analytics/course/docs/troubleshooting.html">troubleshooting guide</a> explains recovery.</p>
+<p>Official guidance: <a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">VS Code notebooks</a>, <a href="https://code.visualstudio.com/docs/datascience/jupyter-kernel-management">kernel selection</a>, <a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository">creating a codespace</a>, <a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/stopping-and-starting-a-codespace">stopping a codespace</a> <a href="https://docs.github.com/en/billing/concepts/product-billing/github-codespaces">Codespaces usage</a>, <a href="https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo">forking a repository</a> and <a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/using-source-control-in-your-codespace">source control</a>.</p>
+<p><a href="/data-analytics/course/lessons/01-python-fundamentals.html">Next workshop: Python fundamentals</a></p>
+<hr>
+<p>Course author and research lead: <strong>Sayara Beg</strong>, Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics, Faculty of Mathematical and Physical Sciences. <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">UCL profile</a>. Reused or adapted material must preserve this author credit.</p>
+</article><nav class="lesson-pager" aria-label="Workshop navigation"><a href="/data-analytics/">← Course home</a><a href="/data-analytics/course/lessons/01-python-fundamentals.html">Python fundamentals →</a></nav></main><footer class="footer"><div><strong>Course author and research lead: <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">Sayara Beg</a></strong><br>Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics,<br>Faculty of Mathematical and Physical Sciences.<br>Credit Sayara Beg when reusing or adapting these materials.</div><div><a href="/data-analytics/attribution.html">Attribution & public-release boundary</a><br><a href="/data-analytics/course/docs/verification.html">Verification & limitations</a></div></footer></div></body></html>

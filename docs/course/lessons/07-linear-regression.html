@@ -1,0 +1,152 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Sayara Beg"><meta name="description" content="A UCL Python data analytics teaching activity for the Centre for Systems Engineering, Department of Space and Climate Physics."><meta name="theme-color" content="#361a54"><title>07. Linear regression with a held-out neighbourhood test | UCL Heat Cascade</title><link rel="stylesheet" href="/data-analytics/styles.css"><script src="/data-analytics/app.js" defer></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="ucl-masthead" aria-label="UCL and department identity"><a class="ucl-logo-link" href="https://www.ucl.ac.uk/" aria-label="University College London"><img class="ucl-logo" src="/data-analytics/ucl-logo.svg" alt="UCL (University College London)" width="1394" height="391"></a><div class="ucl-department"><p class="ucl-university">University College London</p><a class="ucl-department-title" href="https://www.ucl.ac.uk/mathematical-physical-sciences/mssl">Department of Space and Climate Physics</a><p class="ucl-centre">UCL Centre for Systems Engineering</p><p class="ucl-faculty">Faculty of Mathematical and Physical Sciences</p></div></header><aside class="sidebar" id="sidebar"><a class="brand" href="/data-analytics/" aria-label="Heat Cascade course home"><span class="brand-mark" aria-hidden="true">HC</span><span>HEAT CASCADE<small>Python data analytics</small></span></a><div class="sidebar-intro">A guided route from your first line of Python to an evidence-led decision.</div><nav aria-label="Workshop route"><div class="nav-group"><p>01 / FOUNDATIONS</p><a href="/data-analytics/course/lessons/00-setup.html" ><span class="nav-number">00</span><span>Setup your workspace</span><span class="completion-dot" data-completed="00-setup" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/01-python-fundamentals.html" ><span class="nav-number">01</span><span>Python fundamentals</span><span class="completion-dot" data-completed="01-python-fundamentals" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/02-reading-data.html" ><span class="nav-number">02</span><span>Read and explore data</span><span class="completion-dot" data-completed="02-reading-data" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/03-data-quality.html" ><span class="nav-number">03</span><span>Clean and audit data</span><span class="completion-dot" data-completed="03-data-quality" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/04-joining-systems.html" ><span class="nav-number">04</span><span>Join the system layers</span><span class="completion-dot" data-completed="04-joining-systems" aria-hidden="true"></span></a></div><div class="nav-group"><p>02 / ANALYTICAL METHODS</p><a href="/data-analytics/course/lessons/05-exploration-visualisation.html" ><span class="nav-number">05</span><span>Explore and visualise</span><span class="completion-dot" data-completed="05-exploration-visualisation" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/06-transparent-index.html" ><span class="nav-number">06</span><span>Build a transparent index</span><span class="completion-dot" data-completed="06-transparent-index" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/07-linear-regression.html" aria-current="page"><span class="nav-number">07</span><span>Linear regression</span><span class="completion-dot" data-completed="07-linear-regression" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/08-classification.html" ><span class="nav-number">08</span><span>Trees and logistic regression</span><span class="completion-dot" data-completed="08-classification" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/09-clustering.html" ><span class="nav-number">09</span><span>Neighbourhood clustering</span><span class="completion-dot" data-completed="09-clustering" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/10-time-series.html" ><span class="nav-number">10</span><span>Time-series evaluation</span><span class="completion-dot" data-completed="10-time-series" aria-hidden="true"></span></a></div><div class="nav-group"><p>03 / DECISIONS & EVIDENCE</p><a href="/data-analytics/course/lessons/11-deep-uncertainty.html" ><span class="nav-number">11</span><span>Decisions under uncertainty</span><span class="completion-dot" data-completed="11-deep-uncertainty" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/12-game-and-text.html" ><span class="nav-number">12</span><span>Game and text analysis</span><span class="completion-dot" data-completed="12-game-and-text" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/13-capstone.html" ><span class="nav-number">13</span><span>Final analytical brief</span><span class="completion-dot" data-completed="13-capstone" aria-hidden="true"></span></a></div></nav><div class="side-bottom"><a href="/data-analytics/course/docs/data-dictionary.html">Data dictionary ↗</a><a href="/data-analytics/course/instructor/teaching-guide.html">Instructor guide ↗</a><p>Fictional city. Real analytical practice.<br>Every supplied record is synthetic.</p></div></aside><div class="workspace"><header class="topbar"><button class="menu-button" type="button" aria-controls="sidebar" aria-expanded="false">☰ <span>Workshops</span></button><div class="top-links"><a href="/data-analytics/" >Course</a><a href="/data-analytics/course/docs/data-dictionary.html">Data</a><a href="/data-analytics/resources.html" >Resources</a></div><a class="setup-link" href="/data-analytics/course/lessons/00-setup.html">Student setup <span aria-hidden="true">→</span></a></header><main id="main-content"><div class="document-top"><a href="/data-analytics/">Course home</a><span>/</span><span>Workshop 07</span></div><div class="document-actions"><a class="button secondary" href="/data-analytics/course/lessons/00-setup.html#2-create-an-account-and-fork-the-course">Work in your own fork →</a><button type="button" class="completion-button" data-mark="07-linear-regression" aria-pressed="false">Mark complete</button></div><article class="prose"><h1 id="07-linear-regression-with-a-held-out-neighbourhood-test">07. Linear regression with a held-out neighbourhood test</h1>
+<p><a href="/data-analytics/course/README.html">Course home</a> | <strong>Indicative time:</strong> 2 hours</p>
+<p><strong>Research question:</strong> Can a simple model estimate surface temperature in neighbourhoods excluded from model fitting?</p>
+<p><strong>Dataset boundary:</strong> Every supplied observation and parameter is synthetic. The exercises teach analytical practice; their results do not establish Heat Cascade research findings.</p>
+<h2 id="1-learning-outcomes-and-vocabulary">1. Learning outcomes and vocabulary</h2>
+<ul>
+<li>Separate predictors from a continuous target.</li>
+<li>Hold out whole neighbourhoods and compare a baseline.</li>
+<li>Interpret errors and coefficients within the validation boundary.</li>
+</ul>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning in this workshop</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>predictor</code></td>
+<td>An input used by a model.</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>The quantity being estimated.</td>
+</tr>
+<tr>
+<td><code>training set</code></td>
+<td>Observations available for fitting the model.</td>
+</tr>
+<tr>
+<td><code>test set</code></td>
+<td>Observations reserved for an initial evaluation.</td>
+</tr>
+<tr>
+<td><code>MAE</code></td>
+<td>Mean absolute prediction error, in the target units.</td>
+</tr>
+</tbody></table></div>
+<h2 id="2-guided-analysis">2. Guided analysis</h2>
+<p>Read the purpose, paste one Python block into a new code cell, then run it with <strong>Shift+Enter</strong>. Compare the output before moving to the next step. Code cells within this lesson share variables and must run in order.</p>
+<h3 id="21-find-the-course-files">2.1. Find the course files</h3>
+<p><strong>Why this step matters:</strong> Python needs the course folder before it can read data or save results. Run this cell at the start of every workshop, even in an existing notebook.</p>
+<pre><code class="language-python">from pathlib import Path
+import sys
+
+candidates = [Path.cwd(), Path.cwd() / &quot;heat-cascade&quot;, Path.cwd().parent]
+ROOT = next((p for p in candidates if (p / &quot;data/raw/neighbourhoods.csv&quot;).is_file()), None)
+if ROOT is None:
+    raise FileNotFoundError(&quot;Open the notebook inside the fork&#39;s heat-cascade/notebooks or heat-cascade/student_work folder.&quot;)
+sys.path.insert(0, str(ROOT))
+DATA = ROOT / &quot;data&quot; / &quot;raw&quot;
+OUTPUT = ROOT / &quot;outputs&quot;
+OUTPUT.mkdir(exist_ok=True)
+print(&quot;Course folder:&quot;, ROOT.name)
+</code></pre>
+<p><strong>Expected result:</strong> <code>Course folder: heat-cascade</code>. If this fails, return to the folder check in Lesson 00.</p>
+<p><strong>Read the result:</strong> ROOT locates the course; DATA locates the untouched input tables; OUTPUT stores analysis products. The input tables are already present in the fork.</p>
+<h3 id="22-define-the-analytical-question-and-usable-records">2.2. Define the analytical question and usable records</h3>
+<p><strong>Why this step matters:</strong> A measured target is needed to evaluate a prediction; missing targets cannot be replaced with invented observations.</p>
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from course_utils import load_analysis_data
+from sklearn.model_selection import GroupShuffleSplit
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LinearRegression
+from sklearn.dummy import DummyRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+data = load_analysis_data().dropna(subset=[&quot;surface_temp_c&quot;]).reset_index(drop=True)
+features = [&quot;regional_air_temp_c&quot;, &quot;canopy_pct&quot;, &quot;impervious_pct&quot;]
+X = data[features]
+y = data[&quot;surface_temp_c&quot;]
+groups = data[&quot;neighbourhood_id&quot;]
+print(&quot;Usable target records:&quot;, len(data))
+</code></pre>
+<p><strong>Expected result:</strong> 1,067 records with a measured synthetic surface-temperature target.</p>
+<p><strong>Read the result:</strong> This is a same-day estimate using observed regional air temperature. It is not a next-day forecast. The annual ecosystem snapshot is treated as available baseline metadata in the teaching scenario.</p>
+<h3 id="23-hold-out-entire-neighbourhoods">2.3. Hold out entire neighbourhoods</h3>
+<p><strong>Why this step matters:</strong> A random row split would let repeated observations from the same area appear in both training and testing.</p>
+<pre><code class="language-python">splitter = GroupShuffleSplit(n_splits=1, test_size=0.25, random_state=42)
+train_index, test_index = next(splitter.split(X, y, groups=groups))
+X_train, X_test = X.iloc[train_index], X.iloc[test_index]
+y_train, y_test = y.iloc[train_index], y.iloc[test_index]
+train_groups = set(groups.iloc[train_index])
+test_groups = set(groups.iloc[test_index])
+assert train_groups.isdisjoint(test_groups)
+print(&quot;Training neighbourhoods:&quot;, sorted(train_groups))
+print(&quot;Test neighbourhoods:&quot;, sorted(test_groups))
+</code></pre>
+<p><strong>Expected result:</strong> Nine training neighbourhoods and three test neighbourhoods, with no overlap.</p>
+<p><strong>Read the result:</strong> The 25% split refers to groups, so the row proportions can differ slightly. Shared weather and nearby spatial relationships remain. This split does not establish performance in another city or in future conditions.</p>
+<h3 id="24-fit-the-model-and-a-simple-baseline">2.4. Fit the model and a simple baseline</h3>
+<p><strong>Why this step matters:</strong> A model is useful only when its errors are assessed against a stated alternative.</p>
+<pre><code class="language-python">model = Pipeline([
+    (&quot;imputer&quot;, SimpleImputer(strategy=&quot;median&quot;)),
+    (&quot;regression&quot;, LinearRegression()),
+])
+model.fit(X_train, y_train)
+predicted = model.predict(X_test)
+baseline = DummyRegressor(strategy=&quot;mean&quot;).fit(X_train, y_train)
+baseline_predicted = baseline.predict(X_test)
+scores = pd.DataFrame([
+    {&quot;model&quot;: &quot;Training mean baseline&quot;, &quot;MAE_C&quot;: mean_absolute_error(y_test, baseline_predicted),
+     &quot;RMSE_C&quot;: np.sqrt(mean_squared_error(y_test, baseline_predicted)), &quot;R2&quot;: r2_score(y_test, baseline_predicted)},
+    {&quot;model&quot;: &quot;Linear regression&quot;, &quot;MAE_C&quot;: mean_absolute_error(y_test, predicted),
+     &quot;RMSE_C&quot;: np.sqrt(mean_squared_error(y_test, predicted)), &quot;R2&quot;: r2_score(y_test, predicted)},
+])
+print(scores.round(3).to_string(index=False))
+scores.to_csv(OUTPUT / &quot;07_regression_metrics.csv&quot;, index=False)
+</code></pre>
+<p><strong>Expected result:</strong> MAE, RMSE and R2 for two methods. The synthetic generating equation should make the regression useful against the mean baseline.</p>
+<p><strong>Read the result:</strong> The pipeline learns any median replacement from training data only. RMSE gives larger errors more influence. R2 can be negative when a model performs poorly against a constant test-mean reference; it is not a percentage of correct predictions.</p>
+<h3 id="25-inspect-coefficients-and-residuals">2.5. Inspect coefficients and residuals</h3>
+<p><strong>Why this step matters:</strong> Prediction errors and fitted relationships describe different aspects of the model.</p>
+<pre><code class="language-python">coefficients = pd.DataFrame({&quot;feature&quot;: features, &quot;coefficient&quot;: model.named_steps[&quot;regression&quot;].coef_})
+print(coefficients.round(3).to_string(index=False))
+evaluation = data.iloc[test_index][[&quot;neighbourhood_id&quot;, &quot;date&quot;]].copy()
+evaluation[&quot;actual_surface_c&quot;] = y_test.to_numpy()
+evaluation[&quot;predicted_surface_c&quot;] = predicted
+evaluation[&quot;residual_c&quot;] = evaluation[&quot;actual_surface_c&quot;] - predicted
+print(evaluation.groupby(&quot;neighbourhood_id&quot;)[&quot;residual_c&quot;].agg([&quot;mean&quot;, &quot;std&quot;]).round(3))
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.scatter(predicted, evaluation[&quot;residual_c&quot;], alpha=0.5, color=&quot;#176b65&quot;)
+ax.axhline(0, color=&quot;black&quot;, linewidth=1)
+ax.set(xlabel=&quot;Predicted surface temperature (C)&quot;, ylabel=&quot;Actual minus predicted (C)&quot;,
+       title=&quot;Synthetic held-out neighbourhood residuals&quot;)
+fig.tight_layout()
+fig.savefig(OUTPUT / &quot;07_residuals.png&quot;, dpi=160)
+plt.show()
+evaluation.to_csv(OUTPUT / &quot;07_test_predictions.csv&quot;, index=False)
+coefficients.to_csv(OUTPUT / &quot;07_coefficients.csv&quot;, index=False)
+</code></pre>
+<p><strong>Expected result:</strong> A negative canopy coefficient and a residual plot centred roughly around zero, with nonzero prediction errors.</p>
+<p><strong>Read the result:</strong> The unscaled canopy coefficient refers to a one percentage-point difference, holding the other fitted predictors constant. Correlated features and a small number of areas limit this interpretation. No p-value, causal effect or deployment assurance follows from the coefficient.</p>
+<h2 id="3-independent-practice">3. Independent practice</h2>
+<p>Calculate test MAE separately for each held-out neighbourhood. Explain why a low pooled error can hide a weaker result in one area. Propose an additional validation design before applying a model to a real city.</p>
+<details>
+<summary>Hint</summary>
+
+<p>Create an <code>absolute_error_c</code> column from the absolute residual, then group by <code>neighbourhood_id</code>. A new time window and genuinely separated spatial areas address different generalisation questions.</p>
+</details>
+
+<h2 id="4-interpretation-and-checkpoint">4. Interpretation and checkpoint</h2>
+<p>State the target, predictor availability, test boundary and MAE units. Explain why lower predictive error does not establish the real cooling effect of a canopy intervention. Avoid choosing features repeatedly after inspecting the same test set.</p>
+<p>Save the personal notebook in <code>student_work</code> and place the written response underneath the relevant output. Commit and push the checkpoint to the student&#39;s own fork, then verify it on GitHub. A correct result requires both reproducible code and a defensible interpretation. The <a href="/data-analytics/course/docs/troubleshooting.html">troubleshooting guide</a> explains common errors.</p>
+<p>The worked script (<code>solutions/07-linear-regression.py</code>) repeats every guided code cell. The <a href="/data-analytics/course/instructor/practice-answers.html">practice answers</a> support self-checking after an independent attempt.</p>
+<p><a href="/data-analytics/course/lessons/06-transparent-index.html">Previous workshop</a> | <a href="/data-analytics/course/lessons/08-classification.html">Next workshop</a></p>
+<hr>
+<p>Course author and research lead: <strong>Sayara Beg</strong>, Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics, Faculty of Mathematical and Physical Sciences. <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">UCL profile</a>. Reused or adapted material must preserve this author credit.</p>
+</article><nav class="lesson-pager" aria-label="Workshop navigation"><a href="/data-analytics/course/lessons/06-transparent-index.html">← Build a transparent index</a><a href="/data-analytics/course/lessons/08-classification.html">Trees and logistic regression →</a></nav></main><footer class="footer"><div><strong>Course author and research lead: <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">Sayara Beg</a></strong><br>Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics,<br>Faculty of Mathematical and Physical Sciences.<br>Credit Sayara Beg when reusing or adapting these materials.</div><div><a href="/data-analytics/attribution.html">Attribution & public-release boundary</a><br><a href="/data-analytics/course/docs/verification.html">Verification & limitations</a></div></footer></div></body></html>

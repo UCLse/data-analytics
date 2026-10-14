@@ -1,0 +1,13 @@
+neighbourhood_id,neighbourhood_name,population,older_residents_pct,deprivation_score,x_km,y_km,data_status
+N01,Ashfield,6200,26.0,77.0,0,0,synthetic
+N02,Brookside,5400,16.0,24.0,1,0,synthetic
+N03,Canal Quarter,8100,20.0,51.0,2,0,synthetic
+N04,Dockside,7300,28.0,86.0,3,0,synthetic
+N05,Eastbank,6800,24.0,68.0,0,1,synthetic
+N06,Fern Park,4600,14.0,18.0,1,1,synthetic
+N07,Grove End,5900,19.0,37.0,2,1,synthetic
+N08,Hillview,5600,17.0,31.0,3,1,synthetic
+N09,Market Ward,7900,27.0,79.0,0,2,synthetic
+N10,Northgate,6500,22.0,55.0,1,2,synthetic
+N11,Orchard Ward,4900,15.0,21.0,2,2,synthetic
+N12,Station Quarter,7600,23.0,63.0,3,2,synthetic

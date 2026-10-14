@@ -1,0 +1,37 @@
+session_id,neighbourhood_id,feedback_text,data_status
+S001,N01,The chart was clear and helpful.,synthetic
+S002,N02,The task was confusing and difficult.,synthetic
+S003,N03,The options were good but the cost worried the group.,synthetic
+S004,N04,The explanation was not helpful.,synthetic
+S005,N05,The shade option seemed fair.,synthetic
+S006,N06,The map was clear but the controls were confusing.,synthetic
+S007,N07,The scenario caused worry about unfair outcomes.,synthetic
+S008,N08,The temperature graph was helpful.,synthetic
+S009,N09,The programme budget needs explanation.,synthetic
+S010,N10,The feedback was good and clear.,synthetic
+S011,N11,The trade off was difficult but helpful.,synthetic
+S012,N12,The choice was not good.,synthetic
+S013,N01,The chart was clear and helpful.,synthetic
+S014,N02,The task was confusing and difficult.,synthetic
+S015,N03,The options were good but the cost worried the group.,synthetic
+S016,N04,The explanation was not helpful.,synthetic
+S017,N05,The shade option seemed fair.,synthetic
+S018,N06,The map was clear but the controls were confusing.,synthetic
+S019,N07,The scenario caused worry about unfair outcomes.,synthetic
+S020,N08,The temperature graph was helpful.,synthetic
+S021,N09,The programme budget needs explanation.,synthetic
+S022,N10,The feedback was good and clear.,synthetic
+S023,N11,The trade off was difficult but helpful.,synthetic
+S024,N12,The choice was not good.,synthetic
+S025,N01,The chart was clear and helpful.,synthetic
+S026,N02,The task was confusing and difficult.,synthetic
+S027,N03,The options were good but the cost worried the group.,synthetic
+S028,N04,The explanation was not helpful.,synthetic
+S029,N05,The shade option seemed fair.,synthetic
+S030,N06,The map was clear but the controls were confusing.,synthetic
+S031,N07,The scenario caused worry about unfair outcomes.,synthetic
+S032,N08,The temperature graph was helpful.,synthetic
+S033,N09,The programme budget needs explanation.,synthetic
+S034,N10,The feedback was good and clear.,synthetic
+S035,N11,The trade off was difficult but helpful.,synthetic
+S036,N12,The choice was not good.,synthetic

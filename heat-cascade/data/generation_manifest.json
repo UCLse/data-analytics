@@ -1,0 +1,21 @@
+{
+  "seed": 20261013,
+  "data_status": "synthetic",
+  "monitoring_raw_rows": 1088,
+  "monitoring_unique_rows": 1080,
+  "neighbourhoods": 12,
+  "days": 90,
+  "deliberate_quality_issues": {
+    "exact_duplicates": 8,
+    "blank_surface_values": 10,
+    "sensor_error_surface_values": 2,
+    "out_of_range_surface_values": 1,
+    "out_of_range_humidity_values": 1,
+    "untidy_neighbourhood_keys": 3
+  },
+  "sessions": 36,
+  "questionnaire_rows": 71,
+  "complete_pre_post_pairs": 35,
+  "game_choices": 108,
+  "missing_post_session": "S036"
+}

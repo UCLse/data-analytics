@@ -1,0 +1,133 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Sayara Beg"><meta name="description" content="A UCL Python data analytics teaching activity for the Centre for Systems Engineering, Department of Space and Climate Physics."><meta name="theme-color" content="#361a54"><title>12. Game telemetry, paired observations and text limitations | UCL Heat Cascade</title><link rel="stylesheet" href="/data-analytics/styles.css"><script src="/data-analytics/app.js" defer></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="ucl-masthead" aria-label="UCL and department identity"><a class="ucl-logo-link" href="https://www.ucl.ac.uk/" aria-label="University College London"><img class="ucl-logo" src="/data-analytics/ucl-logo.svg" alt="UCL (University College London)" width="1394" height="391"></a><div class="ucl-department"><p class="ucl-university">University College London</p><a class="ucl-department-title" href="https://www.ucl.ac.uk/mathematical-physical-sciences/mssl">Department of Space and Climate Physics</a><p class="ucl-centre">UCL Centre for Systems Engineering</p><p class="ucl-faculty">Faculty of Mathematical and Physical Sciences</p></div></header><aside class="sidebar" id="sidebar"><a class="brand" href="/data-analytics/" aria-label="Heat Cascade course home"><span class="brand-mark" aria-hidden="true">HC</span><span>HEAT CASCADE<small>Python data analytics</small></span></a><div class="sidebar-intro">A guided route from your first line of Python to an evidence-led decision.</div><nav aria-label="Workshop route"><div class="nav-group"><p>01 / FOUNDATIONS</p><a href="/data-analytics/course/lessons/00-setup.html" ><span class="nav-number">00</span><span>Setup your workspace</span><span class="completion-dot" data-completed="00-setup" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/01-python-fundamentals.html" ><span class="nav-number">01</span><span>Python fundamentals</span><span class="completion-dot" data-completed="01-python-fundamentals" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/02-reading-data.html" ><span class="nav-number">02</span><span>Read and explore data</span><span class="completion-dot" data-completed="02-reading-data" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/03-data-quality.html" ><span class="nav-number">03</span><span>Clean and audit data</span><span class="completion-dot" data-completed="03-data-quality" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/04-joining-systems.html" ><span class="nav-number">04</span><span>Join the system layers</span><span class="completion-dot" data-completed="04-joining-systems" aria-hidden="true"></span></a></div><div class="nav-group"><p>02 / ANALYTICAL METHODS</p><a href="/data-analytics/course/lessons/05-exploration-visualisation.html" ><span class="nav-number">05</span><span>Explore and visualise</span><span class="completion-dot" data-completed="05-exploration-visualisation" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/06-transparent-index.html" ><span class="nav-number">06</span><span>Build a transparent index</span><span class="completion-dot" data-completed="06-transparent-index" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/07-linear-regression.html" ><span class="nav-number">07</span><span>Linear regression</span><span class="completion-dot" data-completed="07-linear-regression" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/08-classification.html" ><span class="nav-number">08</span><span>Trees and logistic regression</span><span class="completion-dot" data-completed="08-classification" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/09-clustering.html" ><span class="nav-number">09</span><span>Neighbourhood clustering</span><span class="completion-dot" data-completed="09-clustering" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/10-time-series.html" ><span class="nav-number">10</span><span>Time-series evaluation</span><span class="completion-dot" data-completed="10-time-series" aria-hidden="true"></span></a></div><div class="nav-group"><p>03 / DECISIONS & EVIDENCE</p><a href="/data-analytics/course/lessons/11-deep-uncertainty.html" ><span class="nav-number">11</span><span>Decisions under uncertainty</span><span class="completion-dot" data-completed="11-deep-uncertainty" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/12-game-and-text.html" aria-current="page"><span class="nav-number">12</span><span>Game and text analysis</span><span class="completion-dot" data-completed="12-game-and-text" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/13-capstone.html" ><span class="nav-number">13</span><span>Final analytical brief</span><span class="completion-dot" data-completed="13-capstone" aria-hidden="true"></span></a></div></nav><div class="side-bottom"><a href="/data-analytics/course/docs/data-dictionary.html">Data dictionary ↗</a><a href="/data-analytics/course/instructor/teaching-guide.html">Instructor guide ↗</a><p>Fictional city. Real analytical practice.<br>Every supplied record is synthetic.</p></div></aside><div class="workspace"><header class="topbar"><button class="menu-button" type="button" aria-controls="sidebar" aria-expanded="false">☰ <span>Workshops</span></button><div class="top-links"><a href="/data-analytics/" >Course</a><a href="/data-analytics/course/docs/data-dictionary.html">Data</a><a href="/data-analytics/resources.html" >Resources</a></div><a class="setup-link" href="/data-analytics/course/lessons/00-setup.html">Student setup <span aria-hidden="true">→</span></a></header><main id="main-content"><div class="document-top"><a href="/data-analytics/">Course home</a><span>/</span><span>Workshop 12</span></div><div class="document-actions"><a class="button secondary" href="/data-analytics/course/lessons/00-setup.html#2-create-an-account-and-fork-the-course">Work in your own fork →</a><button type="button" class="completion-button" data-mark="12-game-and-text" aria-pressed="false">Mark complete</button></div><article class="prose"><h1 id="12-game-telemetry-paired-observations-and-text-limitations">12. Game telemetry, paired observations and text limitations</h1>
+<p><a href="/data-analytics/course/README.html">Course home</a> | <strong>Indicative time:</strong> 2 hours</p>
+<p><strong>Research question:</strong> What can session-level data reveal about choices and recorded scores without attributing a learning effect to the game?</p>
+<p><strong>Dataset boundary:</strong> Every supplied observation and parameter is synthetic. The exercises teach analytical practice; their results do not establish Heat Cascade research findings.</p>
+<h2 id="1-learning-outcomes-and-vocabulary">1. Learning outcomes and vocabulary</h2>
+<ul>
+<li>Join repeated choice records to session-level attributes.</li>
+<li>Match pre/post observations and report incomplete pairs.</li>
+<li>Explain why simple text scoring and response time require contextual interpretation.</li>
+</ul>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning in this workshop</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>telemetry</code></td>
+<td>Recorded interaction events, such as a choice or evidence opening.</td>
+</tr>
+<tr>
+<td><code>paired observation</code></td>
+<td>Two measurements linked to the same session identifier.</td>
+</tr>
+<tr>
+<td><code>attrition</code></td>
+<td>Loss of a measurement or participant from a repeated-measure comparison.</td>
+</tr>
+<tr>
+<td><code>lexicon</code></td>
+<td>A predefined collection of words used in a text-scoring rule.</td>
+</tr>
+</tbody></table></div>
+<h2 id="2-guided-analysis">2. Guided analysis</h2>
+<p>Read the purpose, paste one Python block into a new code cell, then run it with <strong>Shift+Enter</strong>. Compare the output before moving to the next step. Code cells within this lesson share variables and must run in order.</p>
+<h3 id="21-find-the-course-files">2.1. Find the course files</h3>
+<p><strong>Why this step matters:</strong> Python needs the course folder before it can read data or save results. Run this cell at the start of every workshop, even in an existing notebook.</p>
+<pre><code class="language-python">from pathlib import Path
+import sys
+
+candidates = [Path.cwd(), Path.cwd() / &quot;heat-cascade&quot;, Path.cwd().parent]
+ROOT = next((p for p in candidates if (p / &quot;data/raw/neighbourhoods.csv&quot;).is_file()), None)
+if ROOT is None:
+    raise FileNotFoundError(&quot;Open the notebook inside the fork&#39;s heat-cascade/notebooks or heat-cascade/student_work folder.&quot;)
+sys.path.insert(0, str(ROOT))
+DATA = ROOT / &quot;data&quot; / &quot;raw&quot;
+OUTPUT = ROOT / &quot;outputs&quot;
+OUTPUT.mkdir(exist_ok=True)
+print(&quot;Course folder:&quot;, ROOT.name)
+</code></pre>
+<p><strong>Expected result:</strong> <code>Course folder: heat-cascade</code>. If this fails, return to the folder check in Lesson 00.</p>
+<p><strong>Read the result:</strong> ROOT locates the course; DATA locates the untouched input tables; OUTPUT stores analysis products. The input tables are already present in the fork.</p>
+<h3 id="22-inspect-observation-levels-and-summarise-choices">2.2. Inspect observation levels and summarise choices</h3>
+<p><strong>Why this step matters:</strong> The analysis must avoid treating several choices from one session as independent participants.</p>
+<pre><code class="language-python">import pandas as pd
+
+sessions = pd.read_csv(DATA / &quot;sessions.csv&quot;)
+choices = pd.read_csv(DATA / &quot;game_choices.csv&quot;)
+questionnaires = pd.read_csv(DATA / &quot;questionnaires.csv&quot;)
+linked = choices.merge(sessions[[&quot;session_id&quot;, &quot;neighbourhood_id&quot;]], on=&quot;session_id&quot;, validate=&quot;many_to_one&quot;)
+telemetry = linked.groupby(&quot;session_id&quot;).agg(
+    recorded_choices=(&quot;turn&quot;, &quot;count&quot;),
+    mean_active_seconds=(&quot;active_decision_seconds&quot;, &quot;mean&quot;),
+    evidence_open_fraction=(&quot;evidence_opened&quot;, &quot;mean&quot;),
+)
+print(&quot;Sessions:&quot;, len(sessions), &quot;Choice rows:&quot;, len(choices))
+print(telemetry.head().round(2))
+print(choices[&quot;choice&quot;].value_counts())
+</code></pre>
+<p><strong>Expected result:</strong> 36 fictional sessions, 108 choice events and three recorded choices per session.</p>
+<p><strong>Read the result:</strong> The session identifies a single invented participant visit. Active decision seconds exclude pauses by definition in this generated dataset. Faster choices do not necessarily indicate better judgement, and no individual performance diagnosis is supported.</p>
+<h3 id="23-link-pre-and-post-observations-with-an-explicit-completeness-check">2.3. Link pre and post observations with an explicit completeness check</h3>
+<p><strong>Why this step matters:</strong> An outer join reveals missing follow-up before a paired difference is calculated.</p>
+<pre><code class="language-python">pre = questionnaires.loc[questionnaires[&quot;phase&quot;].eq(&quot;pre&quot;), [&quot;session_id&quot;, &quot;knowledge_score&quot;, &quot;confidence_pct&quot;]]
+post = questionnaires.loc[questionnaires[&quot;phase&quot;].eq(&quot;post&quot;), [&quot;session_id&quot;, &quot;knowledge_score&quot;, &quot;confidence_pct&quot;]]
+pairs = pre.merge(post, on=&quot;session_id&quot;, how=&quot;outer&quot;, validate=&quot;one_to_one&quot;,
+                  suffixes=(&quot;_pre&quot;, &quot;_post&quot;), indicator=True)
+print(pairs[&quot;_merge&quot;].value_counts())
+complete = pairs.loc[pairs[&quot;_merge&quot;].eq(&quot;both&quot;)].copy()
+complete[&quot;knowledge_change&quot;] = complete[&quot;knowledge_score_post&quot;] - complete[&quot;knowledge_score_pre&quot;]
+complete[&quot;confidence_change_pp&quot;] = complete[&quot;confidence_pct_post&quot;] - complete[&quot;confidence_pct_pre&quot;]
+complete = complete.merge(telemetry, on=&quot;session_id&quot;, validate=&quot;one_to_one&quot;)
+print(&quot;Complete pairs:&quot;, len(complete))
+print(complete[[&quot;knowledge_change&quot;, &quot;confidence_change_pp&quot;, &quot;mean_active_seconds&quot;]].describe().round(2))
+complete.to_csv(OUTPUT / &quot;12_paired_session_summary.csv&quot;, index=False)
+pairs.to_csv(OUTPUT / &quot;12_pair_completeness.csv&quot;, index=False)
+</code></pre>
+<p><strong>Expected result:</strong> 35 complete pairs and one pre-only record, S036.</p>
+<p><strong>Read the result:</strong> The knowledge score is an invented 0 to 6 quiz count; confidence is a self-report percentage. Neither is an established judgement and decision-making instrument. An immediate pre/post comparison is within-session repeated measurement, and supplies no evidence of durable change or causal game effects.</p>
+<h3 id="24-compare-longitudinal-linkage-and-cross-sectional-description">2.4. Compare longitudinal linkage and cross-sectional description</h3>
+<p><strong>Why this step matters:</strong> The two views answer different questions and use different denominators.</p>
+<pre><code class="language-python">print(&quot;Paired mean knowledge change:&quot;, round(complete[&quot;knowledge_change&quot;].mean(), 3))
+print(&quot;All pre-session mean knowledge:&quot;, round(pre[&quot;knowledge_score&quot;].mean(), 3))
+print(&quot;All post-session mean knowledge:&quot;, round(post[&quot;knowledge_score&quot;].mean(), 3))
+print(&quot;Paired sessions:&quot;, len(complete), &quot;All baseline sessions:&quot;, len(pre), &quot;All post sessions:&quot;, len(post))
+print(&quot;Choice proportions:&quot;)
+print(choices[&quot;choice&quot;].value_counts(normalize=True).round(3))
+</code></pre>
+<p><strong>Expected result:</strong> A paired mean difference for 35 sessions, separate pre/post summaries with 36 and 35 observations, and event-level choice proportions.</p>
+<p><strong>Read the result:</strong> The paired mean uses the same sessions at both stages. Separate population summaries use different denominators and cannot substitute for matched change. Cross-sectional associations describe the observed population at a defined stage. A longer longitudinal design would require further scheduled observations and retention analysis.</p>
+<h3 id="25-expose-the-limitations-of-a-small-text-rule">2.5. Expose the limitations of a small text rule</h3>
+<p><strong>Why this step matters:</strong> A transparent word rule teaches string processing and makes semantic failures inspectable.</p>
+<pre><code class="language-python">positive_words = {&quot;good&quot;, &quot;helpful&quot;, &quot;clear&quot;, &quot;fair&quot;}
+negative_words = {&quot;confusing&quot;, &quot;difficult&quot;, &quot;worry&quot;, &quot;unfair&quot;}
+
+def toy_text_score(text):
+    words = str(text).lower().replace(&quot;.&quot;, &quot;&quot;).split()
+    return sum(word in positive_words for word in words) - sum(word in negative_words for word in words)
+
+sessions[&quot;toy_text_score&quot;] = sessions[&quot;feedback_text&quot;].map(toy_text_score)
+print(sessions[[&quot;feedback_text&quot;, &quot;toy_text_score&quot;]].head(6).to_string(index=False))
+print(&quot;Score for &#39;not helpful&#39;:&quot;, toy_text_score(&quot;not helpful&quot;))
+sessions.to_csv(OUTPUT / &quot;12_toy_text_scores.csv&quot;, index=False)
+</code></pre>
+<p><strong>Expected result:</strong> <code>not helpful</code> receives +1, demonstrating a semantic failure.</p>
+<p><strong>Read the result:</strong> The score ignores negation, context, sarcasm and many word forms. It is a teaching rule, not a validated sentiment measure or a measure of risk perception. Adapting VADER or a language model would still require domain-specific validation against independently coded text.</p>
+<h2 id="3-independent-practice">3. Independent practice</h2>
+<p>Report the incomplete-pair percentage and write a 150-word evaluation plan that could support a stronger learning claim. Include one check on instrument quality and one check on alternative explanations.</p>
+<details>
+<summary>Hint</summary>
+
+<p>One of 36 baseline sessions lacks a post measurement. Consider item validity, a comparison condition, repeat-testing effects and a later follow-up. Evaluate any sentiment approach against independently coded examples.</p>
+</details>
+
+<h2 id="4-interpretation-and-checkpoint">4. Interpretation and checkpoint</h2>
+<p>Give the denominator for each reported measure. Explain why 108 choices are not 108 independent learners. Distinguish confidence from knowledge and knowledge from judgement quality. State why the paired synthetic score difference cannot demonstrate an intervention effect.</p>
+<p>Save the personal notebook in <code>student_work</code> and place the written response underneath the relevant output. Commit and push the checkpoint to the student&#39;s own fork, then verify it on GitHub. A correct result requires both reproducible code and a defensible interpretation. The <a href="/data-analytics/course/docs/troubleshooting.html">troubleshooting guide</a> explains common errors.</p>
+<p>The worked script (<code>solutions/12-game-and-text.py</code>) repeats every guided code cell. The <a href="/data-analytics/course/instructor/practice-answers.html">practice answers</a> support self-checking after an independent attempt.</p>
+<p><a href="/data-analytics/course/lessons/11-deep-uncertainty.html">Previous workshop</a> | <a href="/data-analytics/course/lessons/13-capstone.html">Next workshop</a></p>
+<hr>
+<p>Course author and research lead: <strong>Sayara Beg</strong>, Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics, Faculty of Mathematical and Physical Sciences. <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">UCL profile</a>. Reused or adapted material must preserve this author credit.</p>
+</article><nav class="lesson-pager" aria-label="Workshop navigation"><a href="/data-analytics/course/lessons/11-deep-uncertainty.html">← Decisions under uncertainty</a><a href="/data-analytics/course/lessons/13-capstone.html">Final analytical brief →</a></nav></main><footer class="footer"><div><strong>Course author and research lead: <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">Sayara Beg</a></strong><br>Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics,<br>Faculty of Mathematical and Physical Sciences.<br>Credit Sayara Beg when reusing or adapting these materials.</div><div><a href="/data-analytics/attribution.html">Attribution & public-release boundary</a><br><a href="/data-analytics/course/docs/verification.html">Verification & limitations</a></div></footer></div></body></html>

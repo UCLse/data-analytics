@@ -1,0 +1,15 @@
+{
+  "name": "heat-cascade-teaching-site",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "build:site": "node scripts/build-github-pages.mjs"
+  },
+  "dependencies": {
+    "marked": "17.0.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

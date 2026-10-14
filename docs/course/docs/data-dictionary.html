@@ -1,0 +1,336 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Sayara Beg"><meta name="description" content="A UCL Python data analytics teaching activity for the Centre for Systems Engineering, Department of Space and Climate Physics."><meta name="theme-color" content="#361a54"><title>Data dictionary and observation boundaries | UCL Heat Cascade</title><link rel="stylesheet" href="/data-analytics/styles.css"><script src="/data-analytics/app.js" defer></script></head><body><a class="skip-link" href="#main-content">Skip to content</a><header class="ucl-masthead" aria-label="UCL and department identity"><a class="ucl-logo-link" href="https://www.ucl.ac.uk/" aria-label="University College London"><img class="ucl-logo" src="/data-analytics/ucl-logo.svg" alt="UCL (University College London)" width="1394" height="391"></a><div class="ucl-department"><p class="ucl-university">University College London</p><a class="ucl-department-title" href="https://www.ucl.ac.uk/mathematical-physical-sciences/mssl">Department of Space and Climate Physics</a><p class="ucl-centre">UCL Centre for Systems Engineering</p><p class="ucl-faculty">Faculty of Mathematical and Physical Sciences</p></div></header><aside class="sidebar" id="sidebar"><a class="brand" href="/data-analytics/" aria-label="Heat Cascade course home"><span class="brand-mark" aria-hidden="true">HC</span><span>HEAT CASCADE<small>Python data analytics</small></span></a><div class="sidebar-intro">A guided route from your first line of Python to an evidence-led decision.</div><nav aria-label="Workshop route"><div class="nav-group"><p>01 / FOUNDATIONS</p><a href="/data-analytics/course/lessons/00-setup.html" ><span class="nav-number">00</span><span>Setup your workspace</span><span class="completion-dot" data-completed="00-setup" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/01-python-fundamentals.html" ><span class="nav-number">01</span><span>Python fundamentals</span><span class="completion-dot" data-completed="01-python-fundamentals" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/02-reading-data.html" ><span class="nav-number">02</span><span>Read and explore data</span><span class="completion-dot" data-completed="02-reading-data" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/03-data-quality.html" ><span class="nav-number">03</span><span>Clean and audit data</span><span class="completion-dot" data-completed="03-data-quality" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/04-joining-systems.html" ><span class="nav-number">04</span><span>Join the system layers</span><span class="completion-dot" data-completed="04-joining-systems" aria-hidden="true"></span></a></div><div class="nav-group"><p>02 / ANALYTICAL METHODS</p><a href="/data-analytics/course/lessons/05-exploration-visualisation.html" ><span class="nav-number">05</span><span>Explore and visualise</span><span class="completion-dot" data-completed="05-exploration-visualisation" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/06-transparent-index.html" ><span class="nav-number">06</span><span>Build a transparent index</span><span class="completion-dot" data-completed="06-transparent-index" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/07-linear-regression.html" ><span class="nav-number">07</span><span>Linear regression</span><span class="completion-dot" data-completed="07-linear-regression" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/08-classification.html" ><span class="nav-number">08</span><span>Trees and logistic regression</span><span class="completion-dot" data-completed="08-classification" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/09-clustering.html" ><span class="nav-number">09</span><span>Neighbourhood clustering</span><span class="completion-dot" data-completed="09-clustering" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/10-time-series.html" ><span class="nav-number">10</span><span>Time-series evaluation</span><span class="completion-dot" data-completed="10-time-series" aria-hidden="true"></span></a></div><div class="nav-group"><p>03 / DECISIONS & EVIDENCE</p><a href="/data-analytics/course/lessons/11-deep-uncertainty.html" ><span class="nav-number">11</span><span>Decisions under uncertainty</span><span class="completion-dot" data-completed="11-deep-uncertainty" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/12-game-and-text.html" ><span class="nav-number">12</span><span>Game and text analysis</span><span class="completion-dot" data-completed="12-game-and-text" aria-hidden="true"></span></a><a href="/data-analytics/course/lessons/13-capstone.html" ><span class="nav-number">13</span><span>Final analytical brief</span><span class="completion-dot" data-completed="13-capstone" aria-hidden="true"></span></a></div></nav><div class="side-bottom"><a href="/data-analytics/course/docs/data-dictionary.html">Data dictionary ↗</a><a href="/data-analytics/course/instructor/teaching-guide.html">Instructor guide ↗</a><p>Fictional city. Real analytical practice.<br>Every supplied record is synthetic.</p></div></aside><div class="workspace"><header class="topbar"><button class="menu-button" type="button" aria-controls="sidebar" aria-expanded="false">☰ <span>Workshops</span></button><div class="top-links"><a href="/data-analytics/" >Course</a><a href="/data-analytics/course/docs/data-dictionary.html">Data</a><a href="/data-analytics/resources.html" >Resources</a></div><a class="setup-link" href="/data-analytics/course/lessons/00-setup.html">Student setup <span aria-hidden="true">→</span></a></header><main id="main-content"><div class="document-top"><a href="/data-analytics/">Course home</a><span>/</span><span>Resource</span></div><div class="document-actions"></div><article class="prose"><h1 id="data-dictionary-and-observation-boundaries">Data dictionary and observation boundaries</h1>
+<h2 id="1-synthetic-system-boundary">1. Synthetic system boundary</h2>
+<p>Every table contains invented teaching data. No source observation, actual neighbourhood, participant response or intervention estimate appears in these files. The generation seed is <code>20261013</code>; the generator and deliberate defects are recorded in the generation manifest (<code>data/generation_manifest.json</code>).</p>
+<p>An identifier connects records. It does not establish a causal relationship. Different observation levels must remain explicit when tables are joined, aggregated or evaluated.</p>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Observation level</th>
+<th>Key</th>
+<th>Raw rows</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>neighbourhoods.csv</code></td>
+<td>Fictional neighbourhood</td>
+<td><code>neighbourhood_id</code></td>
+<td>12</td>
+<td>One static teaching snapshot</td>
+</tr>
+<tr>
+<td><code>ecosystems.csv</code></td>
+<td>Neighbourhood-year</td>
+<td><code>neighbourhood_id</code>, <code>year</code></td>
+<td>72</td>
+<td>2020 to 2025, inclusive</td>
+</tr>
+<tr>
+<td><code>monitoring.csv</code></td>
+<td>Neighbourhood-day, before cleaning</td>
+<td><code>neighbourhood_id</code>, <code>date</code> after cleaning</td>
+<td>1,088</td>
+<td>1 June to 29 August 2025; eight duplicate rows</td>
+</tr>
+<tr>
+<td><code>sessions.csv</code></td>
+<td>Fictional game session</td>
+<td><code>session_id</code></td>
+<td>36</td>
+<td>Each session is linked to one fictional area</td>
+</tr>
+<tr>
+<td><code>questionnaires.csv</code></td>
+<td>Session-phase</td>
+<td><code>session_id</code>, <code>phase</code></td>
+<td>71</td>
+<td>36 pre records; 35 post records</td>
+</tr>
+<tr>
+<td><code>game_choices.csv</code></td>
+<td>Session-turn</td>
+<td><code>session_id</code>, <code>turn</code></td>
+<td>108</td>
+<td>Three sequential choices per session</td>
+</tr>
+<tr>
+<td><code>scenario_assumptions.csv</code></td>
+<td>Assumed future</td>
+<td><code>future</code></td>
+<td>3</td>
+<td>Futures A, B and C have no assigned probabilities</td>
+</tr>
+<tr>
+<td><code>interventions.csv</code></td>
+<td>Programme option</td>
+<td><code>intervention</code></td>
+<td>4</td>
+<td>Invented effects and programme costs</td>
+</tr>
+</tbody></table></div>
+<p>All CSV files are in <a href="/data-analytics/course/data/raw/index.html">data/raw</a>. <code>data_status</code> marks the first six tables as <code>synthetic</code>. The scenario and intervention tables also contain entirely synthetic assumptions, even though that marker column is absent.</p>
+<h2 id="2-area-and-ecosystem-attributes">2. Area and ecosystem attributes</h2>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type and units</th>
+<th>Meaning and interpretation boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>neighbourhood_id</code></td>
+<td>Text, <code>N01</code> to <code>N12</code></td>
+<td>Fictional area key; whitespace and case defects occur in monitoring</td>
+</tr>
+<tr>
+<td><code>neighbourhood_name</code></td>
+<td>Text</td>
+<td>Invented name; no link to a real locality</td>
+</tr>
+<tr>
+<td><code>population</code></td>
+<td>Integer, people</td>
+<td>Invented area denominator, held constant throughout the exercises</td>
+</tr>
+<tr>
+<td><code>older_residents_pct</code></td>
+<td>Numeric, %</td>
+<td>Invented share of older residents; age cut-off is unspecified, so real-data use needs a definition</td>
+</tr>
+<tr>
+<td><code>deprivation_score</code></td>
+<td>Numeric, 0 to 100</td>
+<td>Arbitrary proxy; larger values mean greater illustrative deprivation; no official index is represented</td>
+</tr>
+<tr>
+<td><code>x_km</code>, <code>y_km</code></td>
+<td>Numeric, fictional kilometres</td>
+<td>Coordinates on a simple teaching grid; no coordinate reference system or real geographical position</td>
+</tr>
+<tr>
+<td><code>year</code></td>
+<td>Integer</td>
+<td>Annual ecosystem snapshot label; the 2025 snapshot is assumed available as baseline metadata</td>
+</tr>
+<tr>
+<td><code>canopy_pct</code></td>
+<td>Numeric, %</td>
+<td>Invented area share under tree canopy; change is measured in percentage points</td>
+</tr>
+<tr>
+<td><code>impervious_pct</code></td>
+<td>Numeric, %</td>
+<td>Invented impervious-surface share; held constant across years</td>
+</tr>
+<tr>
+<td><code>habitat_condition_score</code></td>
+<td>Numeric, 0 to 100</td>
+<td>Arbitrary condition proxy derived partly from canopy; no validated ecological assessment instrument</td>
+</tr>
+</tbody></table></div>
+<p>Canopy and impervious cover are separate indicators. Their values need not sum to 100. Six annual snapshots describe invented cover trajectories; they do not identify an ecological tipping point.</p>
+<h2 id="3-monitoring-attributes-and-quality-rules">3. Monitoring attributes and quality rules</h2>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type and units after cleaning</th>
+<th>Meaning and interpretation boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>date</code></td>
+<td>Datetime, daily</td>
+<td>One monitoring day; the source file stores ISO dates as text</td>
+</tr>
+<tr>
+<td><code>regional_air_temp_c</code></td>
+<td>Numeric, degrees Celsius</td>
+<td>Shared regional weather input; repeated across all areas on a day</td>
+</tr>
+<tr>
+<td><code>surface_temp_c</code></td>
+<td>Numeric, degrees Celsius</td>
+<td>Invented land-surface reading; distinct from air temperature or personal exposure</td>
+</tr>
+<tr>
+<td><code>relative_humidity_pct</code></td>
+<td>Numeric, %</td>
+<td>Invented humidity reading</td>
+</tr>
+<tr>
+<td><code>electricity_kwh_per_household</code></td>
+<td>Numeric, kWh per household per day</td>
+<td>Invented daily area mean; no actual meter records</td>
+</tr>
+<tr>
+<td><code>service_calls</code></td>
+<td>Integer, calls per neighbourhood-day</td>
+<td>Invented aggregate service demand; no clinical or heat-specific outcome is supplied</td>
+</tr>
+</tbody></table></div>
+<p>Workshop 03 removes eight exact duplicates, normalises three untidy area keys and converts unreadable surface text to missing values. Ten blanks, two <code>sensor_error</code> strings and one 99 C reading leave 13 missing surface observations in 1,080 cleaned neighbourhood-days. One humidity value of 105% becomes missing.</p>
+<p>The teaching surface bounds are -10 to 65 C; humidity bounds are 0 to 100%. These rules handle deliberate defects. A real monitoring programme requires sensor-specific checks, provenance and review of unexpected but plausible readings.</p>
+<h2 id="4-game-session-attributes">4. Game-session attributes</h2>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type and units</th>
+<th>Meaning and interpretation boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>session_id</code></td>
+<td>Text, <code>S001</code> to <code>S036</code></td>
+<td>Fictional session key; no person is identified</td>
+</tr>
+<tr>
+<td><code>feedback_text</code></td>
+<td>Text</td>
+<td>Repeated invented comments for practising text handling</td>
+</tr>
+<tr>
+<td><code>phase</code></td>
+<td>Text, <code>pre</code> or <code>post</code></td>
+<td>Questionnaire phase within the same session</td>
+</tr>
+<tr>
+<td><code>knowledge_score</code></td>
+<td>Integer, 0 to 6</td>
+<td>Arbitrary teaching score; no items, psychometric properties or validated instrument are supplied</td>
+</tr>
+<tr>
+<td><code>confidence_pct</code></td>
+<td>Integer, 0 to 100</td>
+<td>Invented reported confidence; no paired item-level correctness measure</td>
+</tr>
+<tr>
+<td><code>turn</code></td>
+<td>Integer, 1 to 3</td>
+<td>Choice order within a session</td>
+</tr>
+<tr>
+<td><code>choice</code></td>
+<td>Text</td>
+<td><code>tree_cover</code>, <code>shade</code> or <code>monitor</code>; no option establishes objectively better judgement</td>
+</tr>
+<tr>
+<td><code>active_decision_seconds</code></td>
+<td>Integer, seconds</td>
+<td>Invented time associated with a choice; real telemetry needs timing and interruption rules</td>
+</tr>
+<tr>
+<td><code>evidence_opened</code></td>
+<td>Integer, 0 or 1</td>
+<td>Whether a fictional evidence panel was opened; opening does not establish reading or comprehension</td>
+</tr>
+</tbody></table></div>
+<p>Session <code>S036</code> has no post record. Complete-case pre/post analysis therefore has 35 pairs. The 108 turns are nested within 36 sessions, so treating turns as 108 independent participants would inflate the sample size.</p>
+<h2 id="5-scenario-and-programme-assumptions">5. Scenario and programme assumptions</h2>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Units</th>
+<th>Role in the toy calculator</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>future</code></td>
+<td>A, B or C</td>
+<td>Conditional scenario label; no likelihood is available</td>
+</tr>
+<tr>
+<td><code>background_warming_c</code></td>
+<td>Degrees Celsius</td>
+<td>Assumed temperature increment</td>
+</tr>
+<tr>
+<td><code>canopy_loss_pp</code></td>
+<td>Percentage points</td>
+<td>Assumed loss before programme effects</td>
+</tr>
+<tr>
+<td><code>cooling_c_per_canopy_pp</code></td>
+<td>Degrees Celsius per percentage point</td>
+<td>Invented canopy-effect coefficient</td>
+</tr>
+<tr>
+<td><code>shade_cooling_c</code></td>
+<td>Degrees Celsius per shade unit</td>
+<td>Invented street-shade effect</td>
+</tr>
+<tr>
+<td><code>burden_per_degree</code></td>
+<td>Arbitrary burden units per degree</td>
+<td>Teaching coefficient above the invented surface rule</td>
+</tr>
+<tr>
+<td><code>intervention</code></td>
+<td>Text</td>
+<td>Programme label</td>
+</tr>
+<tr>
+<td><code>canopy_gain_pp</code></td>
+<td>Percentage points</td>
+<td>Assumed mature-canopy gain; growth delay is omitted</td>
+</tr>
+<tr>
+<td><code>shade_units</code></td>
+<td>Dimensionless</td>
+<td>Zero or one shade programme unit; no physical specification</td>
+</tr>
+<tr>
+<td><code>programme_cost_gbp</code></td>
+<td>GBP, whole-programme cost</td>
+<td>Invented cost for the fictional city; no appraisal, maintenance or discounting model</td>
+</tr>
+</tbody></table></div>
+<p>The GBP 150,000 baseline budget excludes the combined option. Programme benefits apply to every area using the same coefficients. The comparison excludes changing population, rebound, biodiversity dynamics and implementation uncertainty.</p>
+<h2 id="6-important-derived-fields">6. Important derived fields</h2>
+<div class="table-wrap" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Derived field</th>
+<th>Definition</th>
+<th>Interpretation boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>service_calls_per_1000</code></td>
+<td>Calls / population × 1,000</td>
+<td>Daily area rate; no age standardisation or causal attribution</td>
+</tr>
+<tr>
+<td><code>high_service_demand</code></td>
+<td>1 when calls are at least 12; otherwise 0</td>
+<td>Invented same-day aggregate target; never a clinical alert</td>
+</tr>
+<tr>
+<td><code>teaching_priority_score</code></td>
+<td>100 times the weighted sum of three components</td>
+<td>Value-dependent teaching index; no validated research risk index</td>
+</tr>
+<tr>
+<td><code>cluster</code></td>
+<td>K-means membership label</td>
+<td>Arbitrary profile identifier; no ordinal risk meaning</td>
+</tr>
+<tr>
+<td><code>mean_teaching_burden</code></td>
+<td>Area mean of the toy burden rule</td>
+<td>Dimensionless scenario output; not illness, financial loss or national-security risk</td>
+</tr>
+<tr>
+<td><code>maximum_regret</code></td>
+<td>Largest difference from the best feasible option in each stated future</td>
+<td>Conditional decision criterion, dependent on the chosen futures and objective</td>
+</tr>
+</tbody></table></div>
+<p>The lessons specify each transformation beside its code. <a href="/data-analytics/course/docs/research-alignment.html">Research alignment</a> explains where the teaching system stops and the proposed research programme begins.</p>
+<hr>
+<p>Course author and research lead: <strong>Sayara Beg</strong>, Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics, Faculty of Mathematical and Physical Sciences. <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">UCL profile</a>. Reused or adapted material must preserve this author credit.</p>
+</article></main><footer class="footer"><div><strong>Course author and research lead: <a href="https://profiles.ucl.ac.uk/106848-sayara-beg">Sayara Beg</a></strong><br>Lecturer, UCL Centre for Systems Engineering, Department of Space and Climate Physics,<br>Faculty of Mathematical and Physical Sciences.<br>Credit Sayara Beg when reusing or adapting these materials.</div><div><a href="/data-analytics/attribution.html">Attribution & public-release boundary</a><br><a href="/data-analytics/course/docs/verification.html">Verification & limitations</a></div></footer></div></body></html>

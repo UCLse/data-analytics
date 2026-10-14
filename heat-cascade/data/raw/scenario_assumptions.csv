@@ -1,0 +1,4 @@
+future,background_warming_c,canopy_loss_pp,cooling_c_per_canopy_pp,shade_cooling_c,burden_per_degree
+A,1.0,0,0.04,0.2,1.0
+B,2.0,5,0.015,0.6,1.2
+C,3.0,10,0.025,0.4,1.4

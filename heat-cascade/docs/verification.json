@@ -1,0 +1,144 @@
+{
+  "verification_date": "2026-10-13",
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "scikit-learn": "1.8.0"
+  },
+  "worked_script_execution_logs": {
+    "01-python-fundamentals": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "6e2667de6a642d0e3512d9a9d8ee504b1233ef47d325060b77f2d600ff271f91"
+    },
+    "02-reading-data": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "64b654351f6827a433858f87ce1c54724ba7d9424512a386ed677c091fd54fdd"
+    },
+    "03-data-quality": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "74f0d4affcee5013e5d2a7c864c9ebfa60339b0cacc5f2891ad43c5b519c7ba7"
+    },
+    "04-joining-systems": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "1cc196d11e20128ecd0b82e4369b37048fd6d30dc0c126f048d337aaa9123b5c"
+    },
+    "05-exploration-visualisation": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "51aa8bd944125b7c1232b9c3c3b3c6fed81274252f95730b06a32787102c6de6"
+    },
+    "06-transparent-index": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "599a8305dbef5206efc5d782fd254b8b1190b7d030a57810dea7756f8e702f02"
+    },
+    "07-linear-regression": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "02a82be4ab271e3cc68f9967f1d8ed5eedfe6d5c7e60448d4328d9ef961bd0b8"
+    },
+    "08-classification": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "84b8d244219e23136941d983a6c7ca85a45bdb492fe69682f002345cb4552132"
+    },
+    "09-clustering": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "2d969ee6b6c39fa8cf37ef8d7fba5f2a188797628d71bf1daa642d040da90948"
+    },
+    "10-time-series": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "eaa5c9c9e3d1fb741771a4ee25894b7c909dcf7ab2b14d4afd8b6d4488749de5"
+    },
+    "11-deep-uncertainty": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "4a273968107fa97699a768be3950fb0e17c541600cd1fff403d2acb16e65a31d"
+    },
+    "12-game-and-text": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "2826c4197e4ca66f1eafd9d500c25e41eac24c642edc49599e5d513b01cb0248"
+    },
+    "13-capstone": {
+      "recorded_run_without_traceback": true,
+      "script_sha256": "f475f12eeb966b08cd175bf766c561c28e3e24475b91eacd5cfc616546f8f533"
+    }
+  },
+  "notebook_code_checks": [
+    {
+      "workshop": "01-python-fundamentals",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 4
+    },
+    {
+      "workshop": "02-reading-data",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "03-data-quality",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "04-joining-systems",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 4
+    },
+    {
+      "workshop": "05-exploration-visualisation",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "06-transparent-index",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 4
+    },
+    {
+      "workshop": "07-linear-regression",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "08-classification",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "09-clustering",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "10-time-series",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "11-deep-uncertainty",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 4
+    },
+    {
+      "workshop": "12-game-and-text",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 5
+    },
+    {
+      "workshop": "13-capstone",
+      "guided_code_matches_worked_script": true,
+      "code_cells": 3
+    }
+  ],
+  "limits": [
+    "Fresh Codespaces container not tested end to end",
+    "VS Code notebook UI not tested end to end",
+    "No Windows or macOS installation test",
+    "No empirical validation of synthetic measures or effects"
+  ],
+  "fork_workflow_checks": {
+    "student_notebooks_tracked": true,
+    "selected_evidence_tracked": true,
+    "outputs_ignored": true,
+    "environment_ignored": true,
+    "download_controls_removed": true
+  }
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "number": 1,
+    "stem": "01-python-fundamentals",
+    "title": "Python fundamentals through a heat example",
+    "hours": 2,
+    "question": "How can a small Python calculation describe heat exposure without claiming to measure real risk?"
+  },
+  {
+    "number": 2,
+    "stem": "02-reading-data",
+    "title": "Reading and exploring tables with pandas",
+    "hours": 2,
+    "question": "Which observations and geographical units are available for a Heat Cascade analysis?"
+  },
+  {
+    "number": 3,
+    "stem": "03-data-quality",
+    "title": "Cleaning measurements with a recorded audit",
+    "hours": 2,
+    "question": "Which records are usable, and how do cleaning decisions change the evidence base?"
+  },
+  {
+    "number": 4,
+    "stem": "04-joining-systems",
+    "title": "Joining ecosystem, heat and vulnerability data",
+    "hours": 2,
+    "question": "How can different data layers be connected without multiplying records or mixing incompatible dates?"
+  },
+  {
+    "number": 5,
+    "stem": "05-exploration-visualisation",
+    "title": "Exploration, visualisation and the cascade boundary",
+    "hours": 2,
+    "question": "Which patterns connect ecosystem condition, surface heat and service pressure in this synthetic system?"
+  },
+  {
+    "number": 6,
+    "stem": "06-transparent-index",
+    "title": "A transparent teaching index and sensitivity check",
+    "hours": 2,
+    "question": "How do normalisation choices and value judgements alter a composite priority ranking?"
+  },
+  {
+    "number": 7,
+    "stem": "07-linear-regression",
+    "title": "Linear regression with a held-out neighbourhood test",
+    "hours": 2,
+    "question": "Can a simple model estimate surface temperature in neighbourhoods excluded from model fitting?"
+  },
+  {
+    "number": 8,
+    "stem": "08-classification",
+    "title": "Decision trees, logistic regression and error trade-offs",
+    "hours": 2,
+    "question": "Can same-day environmental and area attributes distinguish higher synthetic service demand?"
+  },
+  {
+    "number": 9,
+    "stem": "09-clustering",
+    "title": "Exploratory neighbourhood profiles through clustering",
+    "hours": 2,
+    "question": "Which synthetic neighbourhoods have similar profiles, and how dependent are the groups on analytical choices?"
+  },
+  {
+    "number": 10,
+    "stem": "10-time-series",
+    "title": "Time series with chronological, one-day-ahead evaluation",
+    "hours": 2,
+    "question": "How well do simple methods estimate the next daily city mean using information available before that day?"
+  },
+  {
+    "number": 11,
+    "stem": "11-deep-uncertainty",
+    "title": "Scenario comparison under deep uncertainty",
+    "hours": 2,
+    "question": "Which intervention performs acceptably across alternative assumptions when reliable scenario probabilities are unavailable?"
+  },
+  {
+    "number": 12,
+    "stem": "12-game-and-text",
+    "title": "Game telemetry, paired observations and text limitations",
+    "hours": 2,
+    "question": "What can session-level data reveal about choices and recorded scores without attributing a learning effect to the game?"
+  },
+  {
+    "number": 13,
+    "stem": "13-capstone",
+    "title": "An evidence-led Heat Cascade analytical brief",
+    "hours": 3,
+    "question": "How can an analyst produce a reproducible recommendation that remains explicit about its evidence and uncertainty?"
+  }
+]

@@ -1,0 +1,5 @@
+intervention,canopy_gain_pp,shade_units,programme_cost_gbp
+Monitor only,0,0,20000
+Mature canopy,10,0,120000
+Street shade,0,1,80000
+Combined,10,1,200000
